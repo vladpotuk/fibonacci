@@ -1,0 +1,21 @@
+fib_cache = {}
+
+def fibonacci(n):
+    
+    if n in fib_cache:
+        return fib_cache[n]
+
+    if n == 0:
+        return 0
+    elif n == 1:
+        return 1
+    else:
+        
+        result = fibonacci(n-1) + fibonacci(n-2)
+        
+        fib_cache[n] = result
+        return result
+
+
+result = fibonacci(1000)
+print("1000-е число Фібоначчі:", result)
